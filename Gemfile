@@ -36,6 +36,8 @@ gem 'jbuilder', '2.4.1'
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
+  # added in chapter 1.5.1 to add support of SQLite for Heroku
+  gem 'sqlite3', '1.3.12'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', '9.0.0', platform: :mri
 end
@@ -47,6 +49,11 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring', '1.7.2'
   gem 'spring-watcher-listen', '2.0.0'
+end
+
+# added in chapter 1.5.1 to allow Rails to talk to PosgreSQL
+group :production do
+  gem 'pg', '0.18.4'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
